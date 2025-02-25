@@ -98,8 +98,6 @@ function Home() {
     }
   ];
 
- 
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Slider */}
@@ -109,7 +107,7 @@ function Home() {
         effect={'fade'}
         autoplay={{
           delay: 3000,
-          disableOnInteraction: true,
+          disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
@@ -325,7 +323,6 @@ function Home() {
         </div>
       </section>
 
-
       {/* Service Popups */}
       {services.map((service, index) => (
         activePopup === `service-${index}` && (
@@ -403,27 +400,6 @@ function Home() {
           </div>
         )
       ))}
-
-      {/* Add CSS for animations */}
-      <style jsx>{`
-        @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        
-        @keyframes slide-up {
-          from { transform: translateY(20px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 1s ease-out;
-        }
-        
-        .animate-slide-up {
-          animation: slide-up 0.7s ease-out;
-        }
-      `}</style>
     </div>
   );
 }
